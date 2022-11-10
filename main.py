@@ -27,7 +27,7 @@ async def on_message(message):
         os.system("start")
         await message.channel.send('Opened cmd!')
     if message.content.startswith('!help'):
-        await message.channel.send('!help - shows this message\n!click - clicks\n!rickroll - Opens rickroll\n!cmd - Opens command prompt!\n!win - clicks Windows button\n!taskmgr - Opens task manager\n!hello - Writes Hello world! and clicks enter\n!alttab - Alt tabs\n!virus - Opens "your computer has a virus" meme msg box')
+        await message.channel.send('!help - shows this message\n!click - clicks\n!rickroll - Opens rickroll\n!cmd - Opens command prompt!\n!win - clicks Windows button\n!taskmgr - Opens task manager\n!hello - Writes Hello world! and clicks enter\n!alttab - Alt tabs\n!virus - Opens "your computer has a virus" meme msg box\n!Ping - pong')
     if message.content.startswith('!win'):
         pyautogui.press('win')
         await message.channel.send('Clicked that annoying windows button!')
@@ -44,6 +44,7 @@ async def on_message(message):
     if message.content.startswith('!virus'):
         pyautogui.alert(text='Your computer has a virus!', title='Indian scammer', button='DESTROY THE SYSTEM')
         await message.channel.send('Opened it!')
-
-client.run('yourTokenHere')
+    if message.content.startswith('!ping'):
+        await message.channel.send('Pong! {0}'.format(round(client.latency, 1)))
+client.run('MTAzODM5NzQyODkwMDA0ODkwNg.GWljJJ.bb2F5W5Dq_wKEDuaLFLjfT2dFLlCuOjqlfRU_U')
 # Made with love by ryz
